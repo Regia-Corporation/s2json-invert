@@ -1,24 +1,17 @@
-# skeleton-module [![travis][travis-image]][travis-url] [![npm][npm-image]][npm-url] [![downloads][downloads-image]][downloads-url] [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+# s2json-invert [![travis][travis-image]][travis-url] [![npm][npm-image]][npm-url] [![downloads][downloads-image]][downloads-url] [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
-[travis-image]: https://travis-ci.org/regia-corporation/skeleton-module.svg?branch=master
-[travis-url]: https://travis-ci.org/regia-corporation/skeleton-module
-[npm-image]: https://img.shields.io/npm/v/skeleton-module.svg
-[npm-url]: https://npmjs.org/package/skeleton-module
-[downloads-image]: https://img.shields.io/npm/dm/skeleton-module.svg
-[downloads-url]: https://www.npmjs.com/package/skeleton-module
+[travis-image]: https://travis-ci.org/CraigglesO/s2json-invert.svg?branch=master
+[travis-url]: https://travis-ci.org/CraigglesO/s2json-invert
+[npm-image]: https://img.shields.io/npm/v/s2json-invert.svg
+[npm-url]: https://npmjs.org/package/s2json-invert
+[downloads-image]: https://img.shields.io/npm/dm/s2json-invert.svg
+[downloads-url]: https://www.npmjs.com/package/s2json-invert
 
 ## About
 
-**Create new modules with this skeleton**
+**Invert s2json polygons and multipolygons, creating a poly outline**
 
-```sh
-# grab the package
-git clone https://github.com/Regia/skeleton-module.git
-# remove the origin
-git remote rm origin
-# download the dependencies
-yarn
-```
+Currently this implementation just throws out any self intersecting polygons
 
 ---
 

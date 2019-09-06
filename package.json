@@ -1,6 +1,6 @@
 {
   "name": "s2json-invert",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Invert s2json polygons and multipolygons, creating a poly outline",
   "main": "lib/index.js",
   "scripts": {
@@ -41,5 +41,10 @@
     "plugins": [
       "flowtype"
     ]
+  },
+  "dependencies": {
+    "@turf/difference": "^6.0.2",
+    "@turf/turf": "^5.1.6",
+    "s2projection": "^1.4.3"
   }
 }
