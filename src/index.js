@@ -90,14 +90,25 @@ function cleanFeature(feature: S2Feature) {
   if (feature.geometry.type === 'Polygon') {
     for (let j = 0, pl = feature.geometry.coordinates.length; j < pl; j++) {
       const ring = feature.geometry.coordinates[j]
+      const ringSet = new Set()
       for (let i = 0; i < ring.length - 1; i++) {
-        const point = ring[i]
-        const nextPoint = ring[i + 1]
-        if (point[0] === nextPoint[0] && point[1] === nextPoint[1]) {
+        const point = ring[i][0] + '_' + ring[i][1]
+        if (ringSet.has(point)) {
           feature.geometry.coordinates[j].splice(i, 1)
           i--
+        } else {
+          ringSet.add(point)
         }
       }
+      // for (let i = 0; i < ring.length - 1; i++) {
+      //   const point = ring[i]
+      //   const nextPoint = ring[i + 1]
+      //   // remove duplicates
+      //   if (point[0] === nextPoint[0] && point[1] === nextPoint[1]) {
+      //     feature.geometry.coordinates[j].splice(i, 1)
+      //     i--
+      //   }
+      // }
       for (let i = 0; i < ring.length - 2; i++) {
         const point = ring[i]
         const middlePoint = ring[i + 1]
@@ -133,9 +144,8 @@ function cleanFeature(feature: S2Feature) {
       }
     }
   }
-
-  // lastly let's remove kinks
   const kinks = turf.kinks(feature)
+  // if kinks still remain, just drop it, it's bad geometry
   if (kinks.features.length) return true
   return false
 }

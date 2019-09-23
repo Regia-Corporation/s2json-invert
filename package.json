@@ -1,6 +1,6 @@
 {
   "name": "s2json-invert",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Invert s2json polygons and multipolygons, creating a poly outline",
   "main": "lib/index.js",
   "scripts": {

@@ -1,7 +1,7 @@
 const fs = require('fs')
 const { invertS2 } = require('./lib').default
 
-const land = JSON.parse(fs.readFileSync('./features/land10m.s2json', 'utf8'))
+const land = JSON.parse(fs.readFileSync('./features/land110m.s2json', 'utf8'))
 
 // const land = {
 //   type: 'S2Feature',
@@ -19,14 +19,14 @@ const land = JSON.parse(fs.readFileSync('./features/land10m.s2json', 'utf8'))
 
 const invertedLand = invertS2(land)
 
-invertedLand.features = invertedLand.features.filter(feature => {
-  if (feature.face === 0) return true
-  else return false
-}).map(feature => {
-  feature.type = 'Feature'
-  return feature
-})
+// invertedLand.features = invertedLand.features.filter(feature => {
+//   if (feature.face === 0) return true
+//   else return false
+// }).map(feature => {
+//   feature.type = 'Feature'
+//   return feature
+// })
+//
+// invertedLand.type = 'FeatureCollection'
 
-invertedLand.type = 'FeatureCollection'
-
-fs.writeFileSync('./invertedLand10m.s2json', JSON.stringify(invertedLand, null, 2))
+fs.writeFileSync('./sea110m.s2json', JSON.stringify(invertedLand, null, 2))
